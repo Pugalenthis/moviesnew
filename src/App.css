@@ -5,78 +5,53 @@
   color: black;
   box-sizing: border-box;
 }
-
-.card:hover{
-   box-shadow: 4px 4px 4px gray,-4px -4px 4px gray;
-   transition: .2s;
-   transform: translateX(-5px) translateY(-5px);
-}
-
 .container{
   width: 100%;
   height: 100vh;
 }
-
-.row{
-   display: flex;  
-}
-
 .App{
   width: 100%;
   display: inline-block;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-evenly;
-  
 }
 
-.card{
-  margin: 10px;
-  min-height: 427px;
-  max-height: 450px;
-  transition: .2s;
+.form-control{
+  display: inline-block;
 }
 
-img{
-  width: 100%;
-  min-width: 280px;
-  max-width: 280px;
-  max-height: 350px;
-  min-height: 350px;
-  object-fit: cover;
+input{
+   margin: 10px;
+   
 }
 
-.fa{
-  font-size: 25px;
-   display: inline-block;
+.add-movie-button{
+  margin-left: 10px;
+}
+.like-button{
+  background-color: green;
+  margin-right: 5px;
 }
 
-.fa-thumbs-o-down{
-      margin-left: 190px;
+.dislike-button{
+  background-color: red;
 }
-
-.card-body{
-  padding: 5px;
-  background-color:white;
-
-}
-
-.card-title{
-   font-size: 17px;
-   margin-top: 5px;
-   letter-spacing: 1px;
-   display: flex;
-   justify-content: space-evenly;
+.card img{ 
+   max-width: 300px;
+   min-height: 300px;
+   max-height: 300px;
+   object-fit: cover;
 }
 .like{
   margin-top: 15px;  
   display: inline;
 }
-
-i{
-  display: inline;
-}
 h6{
   display: inline;
   margin:3px;
+}
+
+.card{
+  width: 18rem;
 }

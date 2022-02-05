@@ -2,34 +2,136 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  let movies = [{
-    banner : "https://m.media-amazon.com/images/M/MV5BNmZkOThkNWYtOTY1ZC00MzZiLWExMDEtMTNhZDcyOGZiZTM5XkEyXkFqcGdeQXVyMTA5MTkyMzU2._V1_.jpg",
-    title : "MUDHAL NEE MUDIVUM NEE"
-},{
-  banner : "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
-  title : "JAI BHIM"
-},{
-  banner : "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
-  title : "MS-DHONI"
-},{
-  banner : "https://archive.gulte.com/content/2012/03/news/Dhanush-and-Shruthi-Hassan-3-Movie-Posters---Photos-130.jpg",
-  title : "3"
-},{
-  banner : "https://static.toiimg.com/photo/73579998.jpeg",
-  title : "OH MY KADAVULEY"
-},{
-  banner : "https://moviegalleri.net/wp-content/uploads/2018/07/Trisha-Krishnan-Vijay-Sethupathi-96-Movie-New-Poster.jpg",
-  title : "96"
-}]
+
+  const imovies = [{
+    banner: "https://m.media-amazon.com/images/M/MV5BNmZkOThkNWYtOTY1ZC00MzZiLWExMDEtMTNhZDcyOGZiZTM5XkEyXkFqcGdeQXVyMTA5MTkyMzU2._V1_.jpg",
+    title: "MUDHAL NEE MUDIVUM NEE",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }
+  //  ,{
+  //   banner: "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
+  //   title: "JAI BHIM",
+  //   rating: 8,
+  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  // }, {
+  //   banner: "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
+  //   title: "MS-DHONI",
+  //   rating: 8,
+  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  // }, {
+  //   banner: "https://archive.gulte.com/content/2012/03/news/Dhanush-and-Shruthi-Hassan-3-Movie-Posters---Photos-130.jpg",
+  //   title: "3",
+  //   rating: 8,
+  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  // }, {
+  //   banner: "https://static.toiimg.com/photo/73579998.jpeg",
+  //   title: "OH MY KADAVULEY",
+  //   rating: 8,
+  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form "
+  // }, {
+  //   banner: "https://moviegalleri.net/wp-content/uploads/2018/07/Trisha-Krishnan-Vijay-Sethupathi-96-Movie-New-Poster.jpg",
+  //   title: "96",
+  //   rating: 8,
+  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form " }
+
+ ]
+
+  const [copymovie, SetMovies] = useState(imovies)
+  const [title, SetTitle] = useState()
+  const [url, SetUrl] = useState()
+  const [rating, SetRating] = useState()
+  const [summary, SetSummary] = useState()
+
+  const newmovie = (title, url, rating, summary) => {
+    const addmovie = {
+      title: title,
+      banner: url,
+      rating: rating,
+      summary: summary
+    }
+
+    SetMovies([...copymovie, addmovie]);
+    
+    
+  }
+
+
+
   return (
-    <div className="App">
-        {movies.map(info=><Movies 
-           banner = {info.banner}
-           title = {info.title}
+    <div >
+
+      <div className="inputs">
+        <input className="form-control" onChange={(val) => {
+          SetTitle(val.target.value)
+        }} placeholder='Enter your movie title'></input>
+        <input className="form-control" onChange={(val) => {
+          SetUrl(val.target.value)
+          console.log(url)
+        }} placeholder='Enter your movie image url'></input>
+        <input className="form-control" onChange={(val) => {
+          SetRating(val.target.value)
+        }} placeholder='Enter your movie rating'></input>
+        <input className="form-control" onChange={(val) => {
+          SetSummary(val.target.value)
+        }} placeholder='Enter your movie summary'></input>
+        <button type='submit' onClick={() => {
+          newmovie(title, url, rating, summary)
+
+        }}
+          className='btn bg-primary add-movie-button'>Add movie</button>
+      </div>
+      <div className='App'>
+        {copymovie.map(info => <Movie
+          banner={info.banner}
+          title={info.title}
+          rating={info.rating}
+          summary={info.summary}
         />)}
+      </div>
+
     </div>
   );
 }
+
+
+
+
+
+
+
+function Movie({ banner, title, rating, summary }) {
+
+  // console.log(banner)
+  // console.log(rating)
+  // console.log(title)
+  // console.log(summary)
+  const [like, setlike] = useState(0);
+  const [dislike, dellike] = useState(0);
+  return (
+    <div>
+      <div className="card mt-sm-3" >
+        <img src={banner} className="card-img-top " alt="..."></img>
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text">{rating}</p>
+          <p className="card-text">{summary}</p>
+          <div className='like'>
+            <button className='btn like-button'><i onClick={() => { setlike(like + 1) }} className='fa fa-thumbs-o-up' ><h6>{like}</h6></i></button>
+            <button className='btn dislike-button'><i onClick={() => { dellike(dislike + 1) }} className='fa fa-thumbs-o-down'><h6>{dislike}</h6></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  )
+}
+
+export default App;
+
+
+
 
 //hooks is a function starts with use keyword.
 //usestate is used to inform react that value is updated
@@ -57,26 +159,3 @@ function App() {
         
    )
 }*/
-
-function Movies({banner,title}){
-  const[like,setlike] =useState(0);
-  const[dislike,dellike] =useState(0);
-    return (
-      <div>
-         <div className='card'>
-               <img className='card-img-top' src={banner}></img>
-               <div className='card-body'>
-               <h6 className='card-title'>{title}</h6>
-                  <div className='like'>
-                   <i onClick={()=>{setlike(like+1)}} className='fa fa-thumbs-o-up' ><h6>{like}</h6></i>
-                   <i onClick={()=>{dellike(dislike+1)}} className='fa fa-thumbs-o-down'><h6>{dislike}</h6></i>
-                  </div>
-               </div>
-            </div>
-
-         </div>
-     
-    )
-}
-
-export default App;
