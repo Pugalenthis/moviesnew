@@ -5,24 +5,24 @@ import { Movie } from './Movie';
 function App() {
 
   const imovies = [
-  //   {
-  //   banner: "https://m.media-amazon.com/images/M/MV5BNmZkOThkNWYtOTY1ZC00MzZiLWExMDEtMTNhZDcyOGZiZTM5XkEyXkFqcGdeQXVyMTA5MTkyMzU2._V1_.jpg",
-  //   title: "MUDHAL NEE MUDIVUM NEE",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // }
-  //  ,{
-  //   banner: "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
-  //   title: "JAI BHIM",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // }
-  // , {
-  //   banner: "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
-  //   title: "MS-DHONI",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // },
+    {
+    banner: "https://m.media-amazon.com/images/M/MV5BNmZkOThkNWYtOTY1ZC00MzZiLWExMDEtMTNhZDcyOGZiZTM5XkEyXkFqcGdeQXVyMTA5MTkyMzU2._V1_.jpg",
+    title: "MUDHAL NEE MUDIVUM NEE",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }
+   ,{
+    banner: "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
+    title: "JAI BHIM",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }
+  , {
+    banner: "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
+    title: "MS-DHONI",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  },
    {
     banner: "https://archive.gulte.com/content/2012/03/news/Dhanush-and-Shruthi-Hassan-3-Movie-Posters---Photos-130.jpg",
     title: "3",
