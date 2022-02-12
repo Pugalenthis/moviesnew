@@ -20,6 +20,13 @@
 .form-control{
   display: inline-block;
 }
+.bi-caret-down,.bi-caret-up{
+  font-size: 25px;
+}
+
+.bi-star-half{
+  color: orange;
+}
 
 input{
    margin: 10px;
@@ -54,4 +61,5 @@ h6{
 
 .card{
   width: 18rem;
+  height: min-content;
 }

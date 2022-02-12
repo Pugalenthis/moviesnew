@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import { Movie } from './Movie';
 
 function App() {
 
@@ -9,31 +10,32 @@ function App() {
     rating: 8,
     summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
   }
-  //  ,{
-  //   banner: "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
-  //   title: "JAI BHIM",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // }, {
-  //   banner: "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
-  //   title: "MS-DHONI",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // }, {
-  //   banner: "https://archive.gulte.com/content/2012/03/news/Dhanush-and-Shruthi-Hassan-3-Movie-Posters---Photos-130.jpg",
-  //   title: "3",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
-  // }, {
-  //   banner: "https://static.toiimg.com/photo/73579998.jpeg",
-  //   title: "OH MY KADAVULEY",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form "
-  // }, {
-  //   banner: "https://moviegalleri.net/wp-content/uploads/2018/07/Trisha-Krishnan-Vijay-Sethupathi-96-Movie-New-Poster.jpg",
-  //   title: "96",
-  //   rating: 8,
-  //   summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form " }
+   ,{
+    banner: "https://www.sify.com/uploads/Jai_bhim_vjcj9cjbcihej.jpg",
+    title: "JAI BHIM",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }
+  , {
+    banner: "https://upload.wikimedia.org/wikipedia/en/3/33/M.S._Dhoni_-_The_Untold_Story_poster.jpg",
+    title: "MS-DHONI",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }, {
+    banner: "https://archive.gulte.com/content/2012/03/news/Dhanush-and-Shruthi-Hassan-3-Movie-Posters---Photos-130.jpg",
+    title: "3",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form"
+  }, {
+    banner: "https://static.toiimg.com/photo/73579998.jpeg",
+    title: "OH MY KADAVULEY",
+    rating: 8,
+    summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form "
+  }, {
+    banner: "https://moviegalleri.net/wp-content/uploads/2018/07/Trisha-Krishnan-Vijay-Sethupathi-96-Movie-New-Poster.jpg",
+    title: "96",
+    rating: 8,
+  summary: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form " }
 
  ]
 
@@ -51,33 +53,33 @@ function App() {
       summary: summary
     }
 
-    SetMovies([...copymovie, addmovie]);
-    
-    
+    SetMovies([...copymovie, addmovie]);  
   }
-
-
-
   return (
+
     <div >
 
       <div className="inputs">
-        <input className="form-control" onChange={(val) => {
+        <input className="form-control"  onChange={(val) => {
           SetTitle(val.target.value)
+
         }} placeholder='Enter your movie title'></input>
+
         <input className="form-control" onChange={(val) => {
           SetUrl(val.target.value)
           console.log(url)
         }} placeholder='Enter your movie image url'></input>
+
         <input className="form-control" onChange={(val) => {
           SetRating(val.target.value)
         }} placeholder='Enter your movie rating'></input>
+
         <input className="form-control" onChange={(val) => {
           SetSummary(val.target.value)
         }} placeholder='Enter your movie summary'></input>
+
         <button type='submit' onClick={() => {
           newmovie(title, url, rating, summary)
-
         }}
           className='btn bg-primary add-movie-button'>Add movie</button>
       </div>
@@ -99,34 +101,6 @@ function App() {
 
 
 
-
-function Movie({ banner, title, rating, summary }) {
-
-  // console.log(banner)
-  // console.log(rating)
-  // console.log(title)
-  // console.log(summary)
-  const [like, setlike] = useState(0);
-  const [dislike, dellike] = useState(0);
-  return (
-    <div>
-      <div className="card mt-sm-3" >
-        <img src={banner} className="card-img-top " alt="..."></img>
-        <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text">{rating}</p>
-          <p className="card-text">{summary}</p>
-          <div className='like'>
-            <button className='btn like-button'><i onClick={() => { setlike(like + 1) }} className='fa fa-thumbs-o-up' ><h6>{like}</h6></i></button>
-            <button className='btn dislike-button'><i onClick={() => { dellike(dislike + 1) }} className='fa fa-thumbs-o-down'><h6>{dislike}</h6></i></button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  )
-}
 
 export default App;
 
@@ -159,3 +133,4 @@ export default App;
         
    )
 }*/
+
